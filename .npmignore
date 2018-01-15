@@ -23,3 +23,5 @@ jest.config*
 docs
 lib/*.ls
 lib/*.js.map
+/.vscode
+/.atom
