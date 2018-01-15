@@ -30,7 +30,7 @@
     "fix": "bash 'sh/fix.sh'",
     "build": "bash 'sh/build.sh'",
     "test": "bash 'sh/test.sh'",
-    "bin": "lsc bin/qr-image-bin.ls"
+    "execute": "lsc lib/qr-image-bin.ls"
   },
   "directories": {
     "lib": "lib"
