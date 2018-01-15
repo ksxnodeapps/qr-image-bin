@@ -25,3 +25,4 @@ lib/*.ls
 lib/*.js.map
 /.vscode
 /.atom
+/.watchmanconfig
