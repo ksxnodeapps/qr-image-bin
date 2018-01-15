@@ -1,5 +1,7 @@
 {
+  "name": "qr-image-bin",
   "version": "0.0.0",
+  "description": "Command-line for qr-image",
   "main": "index.js",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "devDependencies": {
@@ -19,5 +21,24 @@
     "clean": "bash 'sh/clean.sh'",
     "fix": "bash 'sh/fix.sh'",
     "test": "bash 'sh/test.sh'"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/qr-image-bin.git"
+  },
+  "keywords": [
+    "cli",
+    "qr",
+    "image",
+    "qr-image",
+    "bin"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/qr-image-bin/issues"
+  },
+  "homepage": "https://github.com/ksxnodeapps/qr-image-bin#readme"
 }
