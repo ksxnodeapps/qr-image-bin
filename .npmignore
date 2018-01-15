@@ -22,3 +22,4 @@ jest.config*
 /coverage
 docs
 bin/*.ls
+bin/*.js.map
