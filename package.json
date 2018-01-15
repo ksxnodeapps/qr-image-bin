@@ -48,5 +48,9 @@
   "bugs": {
     "url": "https://github.com/ksxnodeapps/qr-image-bin/issues"
   },
-  "homepage": "https://github.com/ksxnodeapps/qr-image-bin#readme"
+  "homepage": "https://github.com/ksxnodeapps/qr-image-bin#readme",
+  "dependencies": {
+    "qr-image": "^3.2.0",
+    "yargs": "^10.1.1"
+  }
 }
