@@ -4,6 +4,7 @@
   "description": "Command-line for qr-image",
   "main": "index.js",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "preferGlobal": true,
   "bin": {
     "qr-image": "bin/qr-image-bin.js",
     "create-qr-image": "bin/qr-image-bin.js",
