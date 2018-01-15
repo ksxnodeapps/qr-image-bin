@@ -66,7 +66,7 @@ const exit = let
   require! 'process'
   require! 'number-enum'
 
-  const names = do
+  const names =
     * 'success'
     * 'generic'
     * 'arguments'
@@ -123,7 +123,7 @@ const handle-stdin-error = (error) ->
 
 const handle-qr-error = (error) ->
   console.error error
-  exit 'qr', 'Failed to read from stdin'
+  exit 'qr'
 
 actual-input
   |> (.then main, handle-stdin-error)
