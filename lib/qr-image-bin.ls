@@ -72,6 +72,7 @@ const exit = let
     * 'arguments'
     * 'input'
     * 'stdin'
+    * 'qr'
 
   const enums = number-enum names
 
@@ -116,6 +117,14 @@ const options = let
 const main = (text) ->
   require('qr-image').image(text, options).pipe(actual-output)
 
+const handle-stdin-error = (error) ->
+  console.error error
+  exit 'stdin', 'Failed to read from stdin'
+
+const handle-qr-error = (error) ->
+  console.error error
+  exit 'qr', 'Failed to read from stdin'
+
 actual-input
-  |> (.then main)
-  |> (.catch -> exit 'stdin', 'Failed to read from stdin')
+  |> (.then main, handle-stdin-error)
+  |> (.catch handle-qr-error)
