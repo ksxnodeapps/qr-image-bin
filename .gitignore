@@ -55,8 +55,6 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-<<<<<<< HEAD
-=======
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -157,4 +155,3 @@ ENV/
 
 # mypy
 .mypy_cache/
->>>>>>> 9917c1d0a1d09a44dbfe527df7e09f6e74c504eb
