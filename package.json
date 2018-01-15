@@ -31,7 +31,7 @@
     "bin": "lsc bin/qr-image-bin.ls"
   },
   "directories": {
-    "test": "test"
+    "lib": "lib"
   },
   "repository": {
     "type": "git",
