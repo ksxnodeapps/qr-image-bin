@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 
 CLEANLIST="$(pwd)/sh/lib/clean-list.sh"
 

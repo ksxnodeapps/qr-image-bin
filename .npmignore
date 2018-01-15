@@ -21,3 +21,4 @@ jest.config*
 /sh
 /coverage
 docs
+bin/*.ls
