@@ -24,6 +24,11 @@ const argv = let
     'help':
       alias: 'h'
 
+    'input':
+      alias: 'i'
+      describe: 'Input filename (optional)'
+      type: 'string'
+
     'output':
       alias: 'o'
       describe: 'Output filename, default to stdout if not provided'
@@ -68,7 +73,7 @@ const argv = let
     |> (.help!)
     |> (.argv)
 
-const {output, format, _: input} = argv
+const {input, output, format, _: rest} = argv
 
 const actual-format = if format
   then format
@@ -80,10 +85,14 @@ const actual-output = if output
   then 'fs' |> require |> (.create-write-stream output)
   else 'process' |> require |> (.stdout)
 
-const actual-input = switch input.length
-  case 0 then 'get-stdin' |> require |> (.call!)
-  case 1 then Promise.resolve input[0]
-  default then exit 'inpupt', 'No input'
+const actual-input = if input
+  then if rest.length
+    then exit 'arguments', '--input and arguments cannot be both present.'
+    else require('fs-extra').read-file(input, 'utf-8')
+  switch rest.length
+    case 0 then 'get-stdin' |> require |> (.call!)
+    case 1 then Promise.resolve rest[0]
+    default then exit 'input', 'No input.'
 
 const options = let
   const base = do
@@ -103,7 +112,7 @@ const main = (text) ->
 
 const handle-stdin-error = (error) ->
   console.error error
-  exit 'stdin', 'Failed to read from stdin'
+  exit 'stdin', 'Failed to read from stdin.'
 
 const handle-qr-error = (error) ->
   console.error error

@@ -11,6 +11,7 @@
     "qr-image-bin": "bin/qr-image-bin.js"
   },
   "devDependencies": {
+    "source-map-support": "^0.5.0",
     "livescript": "^1.5.0",
     "standard": "^10.0.3",
     "uglify-js": "^3.3.7"
