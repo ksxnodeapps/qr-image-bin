@@ -23,6 +23,7 @@ function build () (
   ) >> lib/$name.min.js
 )
 
+stcode=0
 list=(qr-image-bin)
 for name in $list
 do
