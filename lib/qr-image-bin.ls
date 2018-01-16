@@ -94,7 +94,7 @@ const actual-input = if input
     switch rest.length
       case 0 then 'get-stdin' |> require |> (.call!)
       case 1 then Promise.resolve rest[0]
-      default then exit 'input', 'No input.'
+      default then exit 'arguments', 'Too many arguments.'
 
 const options = let
   const base = do
