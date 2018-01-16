@@ -1,19 +1,35 @@
 #! /usr/bin/env bash
-lsc -c -m linked lib/qr-image-bin.ls || exit $?
 
-(
-  uglifyjs \
-    --output \
-      lib/qr-image-bin.min.js \
-    --compress \
-    --source-map \
-      "filename='lib/qr-image-bin.min.js.map',content='lib/qr-image-bin.js.map'" \
-    -- \
-      lib/qr-image-bin.js
-) || exit $?
+function build () (
+  name=$1
 
-(
-  echo
-  echo
-  echo '//# sourceMappingURL=qr-image-bin.min.js.map'
-) >> lib/qr-image-bin.min.js
+  lsc -c -m linked lib/$name.ls || exit $?
+
+  (
+    uglifyjs \
+      --output \
+        lib/$name.min.js \
+      --compress \
+      --source-map \
+        "filename='lib/$name.min.js.map',content='lib/$name.js.map'" \
+      -- \
+        lib/$name.js
+  ) || exit $?
+
+  (
+    echo
+    echo
+    echo '//# sourceMappingURL=$name.min.js.map'
+  ) >> lib/$name.min.js
+)
+
+list=(qr-image-bin)
+for name in $list
+do
+  {
+    build $name
+    ((stcode+=$?))
+  } &
+done
+wait
+exit $stcode
