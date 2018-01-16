@@ -1,6 +1,6 @@
 {
   "name": "qr-image-bin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Command-line for qr-image",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "main": "index.js",
