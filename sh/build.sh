@@ -19,7 +19,7 @@ function build () (
   (
     echo
     echo
-    echo '//# sourceMappingURL=$name.min.js.map'
+    echo "//# sourceMappingURL=$name.min.js.map"
   ) >> lib/$name.min.js
 )
 
