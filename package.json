@@ -32,7 +32,8 @@
     "build": "bash 'sh/build.sh'",
     "test": "bash 'sh/test.sh'",
     "prepublish": "bash 'sh/prepublish.sh'",
-    "execute": "lsc lib/qr-image-bin.ls"
+    "execute": "bash 'sh/execute.sh'",
+    "direct-execute": "lsc lib/qr-image-bin.ls"
   },
   "directories": {
     "lib": "lib"
