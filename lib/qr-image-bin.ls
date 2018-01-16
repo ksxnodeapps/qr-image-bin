@@ -86,13 +86,15 @@ const actual-output = if output
   else 'process' |> require |> (.stdout)
 
 const actual-input = if input
-  then if rest.length
-    then exit 'arguments', '--input and arguments cannot be both present.'
-    else require('fs-extra').read-file(input, 'utf-8')
-  switch rest.length
-    case 0 then 'get-stdin' |> require |> (.call!)
-    case 1 then Promise.resolve rest[0]
-    default then exit 'input', 'No input.'
+  then let
+    if rest.length
+      then exit 'arguments', '--input and arguments cannot be both present.'
+      else require('fs-extra').read-file(input, 'utf-8')
+  else let
+    switch rest.length
+      case 0 then 'get-stdin' |> require |> (.call!)
+      case 1 then Promise.resolve rest[0]
+      default then exit 'input', 'No input.'
 
 const options = let
   const base = do
