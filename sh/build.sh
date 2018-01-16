@@ -24,10 +24,11 @@ function build () (
 )
 
 stcode=0
-list=(qr-image-bin)
-for name in $list
+list=(qr-image-bin exit-status-names)
+for name in ${list[@]}
 do
   {
+    echo "[INFO] Building $name.ls"
     build $name
     ((stcode+=$?))
   } &
