@@ -1,11 +1,19 @@
 #! /usr/bin/env lsc
+const {enums, exit} = require './exit-status-names'
 
 const argv = let
-  const usage = '''
+  const usage = """
     Usage:
       $ $0 [options] [input] -o [output file]
       $ $0 [options] -f [output format] < [input file] > [output file]
-  '''
+
+    Exit Status Codes:
+      #{enums
+        |> Object.entries
+        |> (.map ([name, code]) -> "#{code} → #{name}")
+        |> (.join '\n  ')
+      }
+  """
 
   const example = '''
     $ $0 -o output.svg 'Hello, World!!'
@@ -61,30 +69,6 @@ const argv = let
     |> (.argv)
 
 const {output, format, _: input} = argv
-
-const exit = let
-  require! 'process'
-  require! 'number-enum'
-
-  const names =
-    * 'success'
-    * 'generic'
-    * 'arguments'
-    * 'input'
-    * 'stdin'
-    * 'qr'
-
-  const enums = number-enum names
-
-  return (name, message) ->
-    const code = enums[name]
-
-    if code is 0
-      message and console.info "[SUCCESS] #{message}"
-      process.exit 0
-
-    message and console.error "[ERROR] [#{name.to-upper-case!}] #{message}"
-    process.exit if is-finite code then code else -1
 
 const actual-format = if format
   then format
