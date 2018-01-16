@@ -2,13 +2,18 @@
   "name": "qr-image-bin",
   "version": "0.0.4",
   "description": "Command-line for qr-image",
-  "main": "index.js",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
-  "preferGlobal": true,
+  "main": "index.js",
   "bin": {
     "qr-image": "bin/qr-image-bin.js",
     "create-qr-image": "bin/qr-image-bin.js",
     "qr-image-bin": "bin/qr-image-bin.js"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "number-enum": "^2.1.1",
+    "qr-image": "^3.2.0",
+    "yargs": "^10.1.1"
   },
   "devDependencies": {
     "source-map-support": "^0.5.0",
@@ -53,10 +58,5 @@
   "bugs": {
     "url": "https://github.com/ksxnodeapps/qr-image-bin/issues"
   },
-  "homepage": "https://github.com/ksxnodeapps/qr-image-bin#readme",
-  "dependencies": {
-    "number-enum": "^2.1.1",
-    "qr-image": "^3.2.0",
-    "yargs": "^10.1.1"
-  }
+  "homepage": "https://github.com/ksxnodeapps/qr-image-bin#readme"
 }
