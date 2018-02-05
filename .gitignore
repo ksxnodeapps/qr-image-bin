@@ -17,6 +17,7 @@ temp.*
 *.tern-project
 *.tern-project.json
 /lib/*.js
+/lib.min
 
 # Logs
 logs

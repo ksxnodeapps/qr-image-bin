@@ -21,10 +21,8 @@ jest.config*
 /sh
 /coverage
 docs
-lib/*.ls
-lib/*.js
-lib/*.js.map
-!/lib/*.min.js
+lib
+*.js.map
 /.vscode
 /.atom
 /.watchmanconfig

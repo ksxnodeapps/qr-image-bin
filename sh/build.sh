@@ -8,10 +8,10 @@ function build () (
   (
     uglifyjs \
       --output \
-        lib/$name.min.js \
+        lib.min/$name.js \
       --compress \
       --source-map \
-        "filename='lib/$name.min.js.map',content='lib/$name.js.map'" \
+        "filename='lib.min/$name.js.map',content='lib/$name.js.map'" \
       -- \
         lib/$name.js
   ) || exit $?

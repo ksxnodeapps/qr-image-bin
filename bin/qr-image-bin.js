@@ -1,2 +1,2 @@
 #! /usr/bin/env node
-require('../lib/qr-image-bin.min.js')
+require('../lib.min/qr-image-bin.js')
